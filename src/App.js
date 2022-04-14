@@ -13,7 +13,7 @@ function App() {
       <NavBar/>
       <h1 className="">This is JMStore on dev</h1>
       <h1 className={styles.header}>
-      This is JMStore on dev and this is a proof
+      This is JMStore on dev 
     </h1>
   
     <Footer/>
