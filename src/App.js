@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      <h1 className="my-16">This is JMStore on dev</h1>
+      <h1 className="my-16">Productos</h1>
       
     
     <CardContainer className="flex flex-row">
