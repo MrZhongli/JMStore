@@ -7,6 +7,8 @@ const CardContainer = (props) => {
     display:'flex',
     flexDireccion:'row'
   }
+  
+
   return (
     <div style={estilos}>
         <div>
