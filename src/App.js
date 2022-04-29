@@ -14,9 +14,9 @@ function App() {
  
 
   return (
-    <div className="App">
-      <NavBar/>
-      <h1 className="my-16">Productos</h1>
+    <div className="App bg-gray-300">
+      <NavBar />
+      {/* <h1 className="my-16">Productos</h1>
       
     
     <CardContainer className="flex flex-row ...">
@@ -24,9 +24,9 @@ function App() {
       <Card/>
       <Card/>
       <Card/>
-    </CardContainer>
-    {/* promesas */}
-      <h1>promesa sobre los paises </h1>
+    </CardContainer> */}
+    promesas
+      <h1>Promesas Productos Catalogo</h1>
     <div className="flex flex-column justify-center align-center">
       <ProductListContainer/>
       {/* <ItemListContainer /> */}
@@ -34,13 +34,13 @@ function App() {
      
     </div>
     <hr/>
-    {/* Consumir Api */}
+    {/* Consumir Api
     <div>
       <h1 className='m-16'>starWars container con imagenes de zapatos temporalmente</h1>
       <div className='flex flex-row ...'>
-        {/* <ItemDetailContainer/> */}
+        <ItemDetailContainer/>
       </div>
-    </div>
+    </div> */}
     
     <Footer/>
     </div>
