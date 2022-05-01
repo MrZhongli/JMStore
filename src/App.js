@@ -5,10 +5,10 @@ import Footer from './components/Footer';
 import Card from './components/Card';
 import CardContainer from './components/CardContainer';
 import ItemListContainer from './components/ItemListFolder/ItemListContainer';
-import  ItemDetailContainer  from './components/ItemDetailFolder/ItemDetailContainer';
 import ProductListContainer from './components/ItemListFolder/ProductListContainer';
 
 import HomeContainer from './components/HeroFolder/HomeContainer';
+import DetailContainer from './components/ProductDetailFolder/DetailContainer';
  
 
 
@@ -28,22 +28,25 @@ function App() {
       <Card/>
       <Card/>
     </CardContainer> */}
-    promesas
+      {/* <ItemListContainer /> */}
+    {/* promesas
       <h1>Promesas Productos Catalogo</h1>
     <div className="flex flex-column justify-center align-center">
       <ProductListContainer/>
-      {/* <ItemListContainer /> */}
 
      
-    </div>
-    <hr/>
-    {/* Consumir Api
-    <div>
-      <h1 className='m-16'>starWars container con imagenes de zapatos temporalmente</h1>
-      <div className='flex flex-row ...'>
-        <ItemDetailContainer/>
-      </div>
     </div> */}
+    <hr/>
+    
+
+
+    <div>
+      <h1 className='m-16'>DESAFIO 6</h1>
+      <div className='flex flex-row ...'>
+      <DetailContainer/>
+      </div>
+    </div>
+    
     
     <Footer/>
     </div>

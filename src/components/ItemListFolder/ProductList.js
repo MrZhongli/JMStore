@@ -7,13 +7,28 @@ import Spinner from '../SpinnerObject/Spinner';
 const ProductList = () => {
 
     const [product, setProduct] = useState([]);
-    const [loading, setLoading] = useState([])
+    // const [loading, setLoading] = useState([])
 
     useEffect(() => {
         getProduct()
     }, [])
     
+    useEffect(() => {
+      showSpinner()
+    }, [])
+
+    useEffect(()=>{
+        showSpinner()
+    }, [])
+    
+    
+    const showSpinner = ()=>{
+        return (
+            <Spinner/>
+        )
+    }
     const getProduct = () => {
+        
         const getProductPromise = new Promise((res, rej) => {
             setTimeout(() => {
                 res(productData)
@@ -21,7 +36,7 @@ const ProductList = () => {
         })
         getProductPromise.then(data => {
             setProduct(data)
-            setLoading(false)
+           
         })
     }
 

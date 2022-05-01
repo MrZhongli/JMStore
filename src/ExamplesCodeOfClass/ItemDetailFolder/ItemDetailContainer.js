@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
         .then( res =>res.json())
         .then( data => {
             console.log(data.results);
-            setstartShips(data.results)
+              setstartShips(data.results)
             // data.results.forEach(e=>{
             //     console.log(e.name)
             // })
