@@ -2,9 +2,9 @@ import React from "react";
 
 export const NavBar = () => {
 
-  const bgColor={backgroundColor: '#fcc1c7'}
+  const bgColor={backgroundColor: 'transparent'}
   return (
-    <div className="navbar bg-base-100 bg-gradient-to-r from-purple-500 to-pink-500" >
+    <div className="navbar bg-base-100 bg-transparent" >
     <div className="flex-1">
       <a className="btn btn-ghost normal-case text-xl">Rosse Papeleria</a>
     </div>

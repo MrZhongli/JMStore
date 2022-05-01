@@ -8,6 +8,8 @@ import ItemListContainer from './components/ItemListFolder/ItemListContainer';
 import  ItemDetailContainer  from './components/ItemDetailFolder/ItemDetailContainer';
 import ProductListContainer from './components/ItemListFolder/ProductListContainer';
 
+import HomeContainer from './components/HeroFolder/HomeContainer';
+ 
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
   return (
     <div className="App bg-gray-300">
       <NavBar />
+      <HomeContainer/>
       {/* <h1 className="my-16">Productos</h1>
       
     
