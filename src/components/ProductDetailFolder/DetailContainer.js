@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
 
         const getProductPromise = new Promise((res, rej) => {
             setTimeout(() => {
-                res(productData)
+                res(productData.filter(item => item.id == 1))
             }, 2000)
         })
         getProductPromise.then(data => {
