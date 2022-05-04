@@ -8,20 +8,17 @@ const ItemDetailContainer = () => {
     const [Item, setItem] = useState([])
     useEffect(() => {
         getItem()
-
     }, [])
-
 
     const getItem = () => {
 
         const getProductPromise = new Promise((res, rej) => {
             setTimeout(() => {
-                res(productData.filter(item => item.id == 1))
+                res(productData)
             }, 2000)
         })
         getProductPromise.then(data => {
             setItem(data)
-
         })
     }
 
