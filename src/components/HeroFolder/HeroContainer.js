@@ -1,9 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import webPresentation from '../../webPresentation.svg'
 
 const HeroContainer = () => {
   return (
     <div className="hero min-h-screen bg-transparent">
+      <img  src={webPresentation} />
   <div className="hero-content flex-col lg:flex-row-reverse">
       <img src="https://www.orem.com.mx/wp-content/uploads/2021/09/imagenes-cuadradas-sin-fondo-para-web.png" className="max-w-sm rounded-lg shadow-2xl" />
     <div>

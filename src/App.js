@@ -10,7 +10,9 @@ import DetailContainer from './components/ProductDetailFolder/DetailContainer';
 import { BrowserRouter, Route, Routes, Link} from 'react-router-dom';
 import ProductDetail from './components/ProductDetailFolder/ProductDetail';
 import ContactContainer from './components/ContactFolder/ContactContainer';
-
+import {ToastContainer , toast, Zoom, Bounce} from 'react-toastify'
+// import 'react-toastify/dist/react-toastify.css'
+// import axios from 'axios'
   
 function App() {
  
@@ -20,6 +22,7 @@ function App() {
 
     <BrowserRouter>
       <NavBar/>
+     
       <Routes>
         <Route path='/' element={<HomeContainer/>}></Route>
         <Route path='/producto' element={

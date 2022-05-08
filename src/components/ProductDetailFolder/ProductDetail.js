@@ -1,22 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { productData } from '../../Data/productData'
+import ItemCount from './ItemCount'
 
 
 const ProductDetail = () => {
 
     const { productId } = useParams()
     const [Product, setProduct] = useState( {} )
+    const [Count, setCount] = useState(false)
     
     useEffect(() => {
       setProduct (productData.find(p => p.id == productId))
     }, [productId])
+
+    const onAdd = () =>{
+      console.log('me clickeaste')
+      setCount(!Count)
+    }
     
 
   return (
    <>
 
-<div class="hero min-h-screen bg-pink-100">
+<div class="hero min-h-screen bg-pink-100 ">
   <div class="hero-content flex-col lg:flex-row">
     <img src={Product.img} class="max-w-sm rounded-lg " />
     <div>
@@ -27,7 +34,10 @@ const ProductDetail = () => {
       <div className='m-20'>
       <p class="py-6">{Product.description}</p>
       </div>
-      <button class="btn btn-primary">Solicitar producto</button>
+      <ItemCount onAdd={onAdd} />
+      {/* <button class="btn btn-primary">Solicitar producto</button> */}
+      {Count ? <p>Gracias por tu compra</p> : <p>Agrega tu producto cuando quieras sapobledor</p>}
+
     </div>
   </div>
 </div>

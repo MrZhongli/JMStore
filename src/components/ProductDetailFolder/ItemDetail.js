@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import  DetailContainer from './DetailContainer'
 
 
 const ItemDetail = ( {Item} ) => {
+
   return (
 
         <div class="card w-96 bg-base-100 shadow-xl m-8">
@@ -14,6 +15,7 @@ const ItemDetail = ( {Item} ) => {
                 <p>precio: {Item.price}</p>
             </div>
             <button className='btn btn-primary'>Ver</button>
+       
         </div>
   )
 }
