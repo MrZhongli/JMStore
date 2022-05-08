@@ -1,23 +1,28 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { productData } from '../../Data/productData'
 import ItemCount from './ItemCount'
+import { ToastContainer, toast } from 'react-toastify';
+
 
 
 const ProductDetail = () => {
 
     const { productId } = useParams()
     const [Product, setProduct] = useState( {} )
-    const [Count, setCount] = useState(false)
+    const [Terminar, setTerminar] = useState(false)
+   
     
     useEffect(() => {
       setProduct (productData.find(p => p.id == productId))
     }, [productId])
 
     const onAdd = () =>{
-      console.log('me clickeaste')
-      setCount(!Count)
+      setTerminar(true)
+      // Colocar alert de toastify (a futuro)
     }
+
+    const notify = () => toast("Wow so easy !");
     
 
   return (
@@ -34,10 +39,23 @@ const ProductDetail = () => {
       <div className='m-20'>
       <p class="py-6">{Product.description}</p>
       </div>
-      <ItemCount onAdd={onAdd} />
+      <ToastContainer />
+      
+        
       {/* <button class="btn btn-primary">Solicitar producto</button> */}
-      {Count ? <p>Gracias por tu compra</p> : <p>Agrega tu producto cuando quieras sapobledor</p>}
-
+      
+      {Terminar ? 
+      (
+      <Link to='/cart'> <button class="btn btn-success  border-slate-400 border-2 rounded-sm">
+      Terminar Compra
+      </button>
+      </Link>
+      )
+      :(
+        <ItemCount onAdd={onAdd} />
+      )
+      }
+     
     </div>
   </div>
 </div>
