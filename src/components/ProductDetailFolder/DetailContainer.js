@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
         getItem()
     }, [])
 
-    const getItem = () => {
+     const getItem = () => {
 
         const getProductPromise = new Promise((res, rej) => {
             setTimeout(() => {

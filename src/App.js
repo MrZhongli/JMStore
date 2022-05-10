@@ -11,6 +11,8 @@ import { BrowserRouter, Route, Routes, Link} from 'react-router-dom';
 import ProductDetail from './components/ProductDetailFolder/ProductDetail';
 import ContactContainer from './components/ContactFolder/ContactContainer';
 import {ToastContainer , toast, Zoom, Bounce} from 'react-toastify'
+import AppContextProvider from './components/Context/AppContext';
+import CartContextProvider from './components/Context/CartContext';
 // import 'react-toastify/dist/react-toastify.css'
 // import axios from 'axios'
   
@@ -19,8 +21,9 @@ function App() {
 
   return (
     <div className="App bg-pink-100">
-
-    <BrowserRouter>
+      <AppContextProvider>
+      <CartContextProvider>
+      <BrowserRouter>
       <NavBar/>
      
       <Routes>
@@ -35,6 +38,10 @@ function App() {
       </Routes>
       <Footer/>
     </BrowserRouter>
+
+      </CartContextProvider>
+      </AppContextProvider>
+    
 
 
 

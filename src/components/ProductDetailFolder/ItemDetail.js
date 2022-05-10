@@ -1,22 +1,58 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import  ItemCount  from './ItemCount'
 import  DetailContainer from './DetailContainer'
 
 
-const ItemDetail = ( {Item} ) => {
+const ItemDetail = ( {producto} ) => {
+
+  const [Terminar, setTerminar] = useState(false)
+
+  const { name,  price, stock, img, description, id } =
+  producto
+
+
+  const onAdd = (count) => {
+		setTerminar(true)
+    
+		console.log(count)
+	}
 
   return (
 
-        <div class="card w-96 bg-base-100 shadow-xl m-8">
-            <figure><img src={Item.img} className="h-60 w-80 m-10" alt="planners"/></figure>
-            <div class="card-body">
-                <h2 class="card-title text-center"><strong>{Item.name}</strong></h2>
-                <p>id :{Item.id} </p>
-                <p>precio: {Item.price}</p>
-            </div>
-            <button className='btn btn-primary'>Ver</button>
-       
+    <div class="hero min-h-screen bg-pink-100 ">
+    <div class="hero-content flex-col lg:flex-row">
+      <img src={img} class="max-w-sm rounded-lg " />
+      <div>
+        <h1 class="text-5xl font-bold">{name}</h1>
+        <div>
+          <h2 className='m-20'>Descripción</h2>
+          <h2 className='m-20'>Precio {price} </h2>
         </div>
+        <div className='m-20'>
+        <p class="py-6">{description}</p>
+        </div>
+        <span>cantidad disponible:{stock} </span>
+        
+          
+        {/* <button class="btn btn-primary">Solicitar producto</button> */}
+        
+        {Terminar ? 
+        (
+        <Link to='/cart'> <button class="btn btn-success  border-slate-400 border-2 rounded-sm">
+        Terminar Compra
+        </button>
+        </Link>
+        )
+        :(
+          <ItemCount  stock={stock} onAdd={onAdd} id={id}/>
+        )
+        }
+       
+      </div>
+    </div>
+  </div>
+  
   )
 }
 

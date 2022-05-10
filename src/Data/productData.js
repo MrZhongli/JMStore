@@ -55,10 +55,10 @@ export const productData =  [
     ]
 
 
-//     push(new Producto(1, "AGENDA PERSONALIZADA", 4000, "assets/personal/1.jpg"));
-// productos.push(new Producto(2, "PLANNER ENFERMEROS", 3500, "assets/enfermero/4.jpg"));
-// productos.push(new Producto(3, "PLANNER MEDICOS", 4000, "assets/medico/1.jpg"));
-// productos.push(new Producto(4, "PLANNER ED. DE PARVULOS", 2500, "assets/parvulos/1.jpg"));
-// productos.push(new Producto(5, "PLANNER FONOAUDIOLOGOS", 4000, "assets/oido/1.jpg"));
-// productos.push(new Producto(6, "PLANNER TERAPEUTA OCUPACIONAL", 3500, "assets/terapeuta/1.jpg"));
-// productos.push(new Producto(7, "PLANNER PYME", 3000, "assets/pyme/1.jpg"));
+const task = new Promise ((resp)=>{
+    resp(productData)
+},2000)
+
+export const getItemData=()=>{
+    return task
+}
