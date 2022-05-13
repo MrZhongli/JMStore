@@ -29,12 +29,10 @@ const ProductDetail = () => {
     
 
   return (
-   <>
-<div className="container mx-auto my-8 max-w-4xl ">
-				<ItemDetail producto={Product} />
-			</div>
-   </>
-  )
+    <div>            
+        <ItemDetail  className="container mx-auto my-8 max-w-4xl " item={Product} />
+    </div>
+)
 }
 
 export default ProductDetail

@@ -1,9 +1,10 @@
-import React, {  useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import  ItemCount  from './ItemCount'
 
 
-const ItemDetail = ( {producto} ) => {
+
+const ItemDetail = ( {item} ) => {
 
   const [Terminar, setTerminar] = useState(false)
 

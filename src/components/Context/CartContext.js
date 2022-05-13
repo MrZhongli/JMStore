@@ -54,7 +54,7 @@ const CartContextProvider = ({ children }) => {
 
 	const deleteCart = () => setCart([])
 
-	console.log(cart)
+	console.log(cart.length)
 
 	return (
 		<CartContext.Provider
