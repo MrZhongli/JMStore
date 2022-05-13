@@ -14,7 +14,7 @@ const CartContextProvider = ({ children }) => {
 	// Agregar item al carrito
 	const addToCart = (producto, cantidad) => {
 		const newCart = [...cart]
-		console.log(newCart)
+		
 		const productoIsInCart = isInCart(producto.id)
 
 		if (productoIsInCart) {
@@ -29,6 +29,11 @@ const CartContextProvider = ({ children }) => {
 		producto.quantity = cantidad
 		setCart([...newCart, producto])
 	}
+	function contarItems() { 
+        let iTotales = 0;
+        cart.forEach ( element => iTotales += element.cantidad );
+        return iTotales;
+    }
 
 	const deleteFromCart = (producto) => {
 		const newCart = [...cart]
@@ -43,6 +48,9 @@ const CartContextProvider = ({ children }) => {
 
 		setCart(deleteProduct)
 	}
+	function eliminarItem(id) {
+        setCart(cart.filter( elemento => elemento.id !== id ) )
+    }
 
 	const deleteCart = () => setCart([])
 
@@ -54,8 +62,10 @@ const CartContextProvider = ({ children }) => {
 				cart,
 				addToCart,
 				deleteFromCart,
+				eliminarItem,
 				deleteCart,
 				setCart,
+				contarItems,
 			}}
 		>
 			{children}

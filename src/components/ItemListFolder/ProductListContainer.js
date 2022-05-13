@@ -7,14 +7,20 @@ import Spinner from '../SpinnerObject/Spinner';
 const ProductList = () => {
 
     const [product, setProduct] = useState([]);
-    // const [loading, setLoading] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         getProduct()
     }, [])
     
  
-
+    useEffect(() => {
+        setTimeout(()=>{
+            setLoading(false)
+          },2000)
+     
+    }, [])
+    
   
     const getProduct = () => {
         
@@ -31,13 +37,20 @@ const ProductList = () => {
 
   return (
       <>
-          <div className='flex justify-center align-center'>
+
+      {loading 
+      ? 
+      <Spinner /> 
+      
+      :
+      <div className='flex justify-center align-center'>
               <div className='flex flex-row flex-wrap'>
                   {product.map(p =>
                       <ProductCard key={p.id} product={p} />
                   )}
               </div>
-          </div>
+          </div> }
+          
       </>
     
   )

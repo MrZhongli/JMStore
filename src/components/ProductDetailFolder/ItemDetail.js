@@ -1,7 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, {  useState } from 'react'
 import { Link } from 'react-router-dom'
 import  ItemCount  from './ItemCount'
-import  DetailContainer from './DetailContainer'
 
 
 const ItemDetail = ( {producto} ) => {
@@ -39,7 +38,7 @@ const ItemDetail = ( {producto} ) => {
         
         {Terminar ? 
         (
-        <Link to='/cart'> <button class="btn btn-success  border-slate-400 border-2 rounded-sm">
+        <Link to='/carrito'> <button class="btn btn-success  border-slate-400 border-2 rounded-sm">
         Terminar Compra
         </button>
         </Link>
