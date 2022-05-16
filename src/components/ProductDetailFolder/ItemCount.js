@@ -47,7 +47,7 @@ const ItemCount = ({onAdd, id, stock}) => {
         </div>
         <div>
           <button class="btn btn-success  border-slate-400 border-2 rounded-sm" onClick={() => handleClick(id, count)}>
-            Add To Car
+            Agregar al carrito
           </button>
         </div>
        

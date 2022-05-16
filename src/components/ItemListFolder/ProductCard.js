@@ -1,10 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useCartContext } from '../Context/CartContext'
 
 
 const ProductCard = ( props ) => {
 
     const  {name, id, description, price, img} = props.product
+    const {cart} = useCartContext()
+
+    console.log(cart)
 
   return (
     <div class="card w-96 bg-base-100 shadow-xl m-10">

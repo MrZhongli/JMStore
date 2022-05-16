@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useCartContext } from '../Context/CartContext'
 import  ItemCount  from './ItemCount'
 
 
@@ -7,32 +8,34 @@ import  ItemCount  from './ItemCount'
 const ItemDetail = ( {item} ) => {
 
   const [Terminar, setTerminar] = useState(false)
+  const { addToCart} = useCartContext()
 
-  const { name,  price, stock, img, description, id } =
-  producto
+  // const { name,  price, stock, img, description, id } =
+  // item
 
 
   const onAdd = (count) => {
 		setTerminar(true)
-    
+    addToCart(item);
 		console.log(count)
+
 	}
 
   return (
 
     <div class="hero min-h-screen bg-pink-100 ">
     <div class="hero-content flex-col lg:flex-row">
-      <img src={img} class="max-w-sm rounded-lg " />
+      <img src={item.img} class="max-w-sm rounded-lg " />
       <div>
-        <h1 class="text-5xl font-bold">{name}</h1>
+        <h1 class="text-5xl font-bold">{item.name}</h1>
         <div>
           <h2 className='m-20'>Descripción</h2>
-          <h2 className='m-20'>Precio {price} </h2>
         </div>
         <div className='m-20'>
-        <p class="py-6">{description}</p>
+        <p class="py-6">{item.description}</p>
         </div>
-        <span>cantidad disponible:{stock} </span>
+        <span>cantidad disponible:{item.stock} </span>
+          <h2 className='m-20'>Precio {item.price} </h2>
         
           
         {/* <button class="btn btn-primary">Solicitar producto</button> */}
@@ -45,7 +48,7 @@ const ItemDetail = ( {item} ) => {
         </Link>
         )
         :(
-          <ItemCount  stock={stock} onAdd={onAdd} id={id}/>
+          <ItemCount  stock={item.stock} onAdd={onAdd} id={item.id}/>
         )
         }
        

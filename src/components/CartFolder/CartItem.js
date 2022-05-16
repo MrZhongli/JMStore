@@ -1,11 +1,11 @@
 import React from "react";
 import { useContext } from "react";
-import CartContext from "../Context/CartContext";
+import  { useCartContext } from "../Context/CartContext";
 import { Link } from 'react-router-dom';
 
 const CartItem = ({item}) => {
     
-    const { eliminarItem } = useContext(CartContext);
+    const { eliminarItem } = useCartContext();
     
     return (
         
@@ -23,7 +23,7 @@ const CartItem = ({item}) => {
                         <span className="flex text-gray-500 text-s font-medium ">Precio: AR$ {item.cantidad * item.price}</span>
                     </div>
                     <div className="flex items-center  flex-end">
-                        <button onClick={()=>eliminarItem(item.id)} className="inline-flex items-center border-0 py-1 px-3 mx-5 mt-10 focus:outline-none bg-blue-300 hover:bg-blue-800 hover:text-white rounded-full  md:mt-0 text-lg font-bold" >Eliminar</button>
+                        <button onClick={()=>eliminarItem(item.id)} className="inline-flex items-center border-0 py-1 px-3 mx-5 mt-10 focus:outline-none bg-blue-300 hover:bg-blue-800 hover:text-white rounded-full   md:mt-0 text-lg font-bold" >Eliminar</button>
                     </div> 
                 </div>
             </div>
