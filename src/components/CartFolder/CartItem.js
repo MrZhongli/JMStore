@@ -19,8 +19,8 @@ const CartItem = ({item}) => {
                     </Link>
                     <div className="container flex-col sm:text-left  mt-6 sm:mt-0" >
                         <h2 className=  "flex text-gray-900 text-lg title-font font-medium mb-2">{item.name}</h2>
-                        <span className="flex text-gray-500 text-s font-medium ">Cantidad: {item.cantidad} unidades</span>
-                        <span className="flex text-gray-500 text-s font-medium ">Precio: AR$ {item.cantidad * item.price}</span>
+                        <h6 className="card-subtitle mb-2 text-muted">{`Cantidad: ${item.quantity} unidades`}</h6>
+                        <span className="flex text-gray-500 text-s font-medium ">Precio: CL$ {item.quantity * item.price}</span>
                     </div>
                     <div className="flex items-center  flex-end">
                         <button onClick={()=>eliminarItem(item.id)} className="inline-flex items-center border-0 py-1 px-3 mx-5 mt-10 focus:outline-none bg-blue-300 hover:bg-blue-800 hover:text-white rounded-full   md:mt-0 text-lg font-bold" >Eliminar</button>

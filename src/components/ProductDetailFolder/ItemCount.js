@@ -4,16 +4,18 @@ import { productData } from '../../Data/productData';
 import { useAppContext } from "../Context/AppContext"
 import { useCartContext } from "../Context/CartContext"
 
-const ItemCount = ({onAdd, id, stock}) => {
+const ItemCount = ({ item , onAdd}) => {
   
-  const [count, setCount] = useState(0)
   const { addToCart } = useCartContext()
-	const { products } = useAppContext()
+  const [count, setCount] = useState(0);
+  
+	// const { products } = useAppContext()
+
 
 
     const addHandler = ()=>{
       
-      if (count < 6) {
+      if (count < item.stock) {
         setCount(count + 1)
       }
     }
@@ -23,17 +25,14 @@ const ItemCount = ({onAdd, id, stock}) => {
         setCount(count - 1)
       }
     }
-    const handleClick = (id, cantidad) => {
-      const findProduct = products.filter((producto) => producto.id === id)
   
-      if (!findProduct) {
-        alert("Error en la base de datos")
-        return
+
+    const handleClick = () =>  {
+      if (item.stock > 0 && count > 0) {
+        addToCart(item, count);
+        onAdd(count)
       }
-  
-      addToCart(findProduct, cantidad)
-      onAdd(count)
-    }
+    };
 
   return (
     <>
@@ -46,7 +45,7 @@ const ItemCount = ({onAdd, id, stock}) => {
           </div>
         </div>
         <div>
-          <button class="btn btn-success  border-slate-400 border-2 rounded-sm" onClick={() => handleClick(id, count)}>
+          <button class="btn btn-success  border-slate-400 border-2 rounded-sm" onClick={handleClick}>
             Agregar al carrito
           </button>
         </div>

@@ -6,7 +6,7 @@ import { useCartContext } from "../Context/CartContext";
 
 
 const Cart = () => {
-    const {cart} = useCartContext()
+    const {cart, total, deleteFromCart} = useCartContext()
     // console.log(cart)
    
     if (cart.length === 0) {
@@ -30,8 +30,8 @@ const Cart = () => {
                 {/* Detalle de cada producto agregado */}
                 <div>
                     {cart.map((item) => {
-                            return <CartItem key={item.id} item={item}></CartItem>;
-                         })}
+                        return <CartItem key={item.id} item={item}></CartItem>;
+                    })}
                     </div>
 
                 {/* Totalizados */}
@@ -43,6 +43,7 @@ const Cart = () => {
                         {/* Precio total del carrito: AR$ {precioTotal()} */}
                     </h3>
                 </div>
+                    <h1>Total: ${total()}</h1>
 
                 {/* Botones */}
                 <div className=" flex flex-wrap justify-center mt-6 mb-20">

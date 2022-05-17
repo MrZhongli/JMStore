@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../Context/CartContext'
 import  ItemCount  from './ItemCount'
@@ -7,19 +7,21 @@ import  ItemCount  from './ItemCount'
 
 const ItemDetail = ( {item} ) => {
 
-  const [Terminar, setTerminar] = useState(false)
+  // const [Terminar, setTerminar] = useState(false)
+  const [count, setCount] = useState(0);
   const { addToCart} = useCartContext()
+  
+  
+  
+  const onAdd = (quantiyToAdd) =>{ 
+  // setTerminar(true)
+  setCount(quantiyToAdd)
+  
+  }
 
-  // const { name,  price, stock, img, description, id } =
-  // item
 
+	
 
-  const onAdd = (count) => {
-		setTerminar(true)
-    addToCart(item);
-		console.log(count)
-
-	}
 
   return (
 
@@ -28,6 +30,7 @@ const ItemDetail = ( {item} ) => {
       <img src={item.img} class="max-w-sm rounded-lg " />
       <div>
         <h1 class="text-5xl font-bold">{item.name}</h1>
+        
         <div>
           <h2 className='m-20'>Descripción</h2>
         </div>
@@ -40,7 +43,7 @@ const ItemDetail = ( {item} ) => {
           
         {/* <button class="btn btn-primary">Solicitar producto</button> */}
         
-        {Terminar ? 
+        {count !== 0 ? 
         (
         <Link to='/carrito'> <button class="btn btn-success  border-slate-400 border-2 rounded-sm">
         Terminar Compra
@@ -48,7 +51,7 @@ const ItemDetail = ( {item} ) => {
         </Link>
         )
         :(
-          <ItemCount  stock={item.stock} onAdd={onAdd} id={item.id}/>
+          <ItemCount  item={item}  onAdd={onAdd} />
         )
         }
        

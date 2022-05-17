@@ -8,27 +8,25 @@ const CartContextProvider = ({ children }) => {
 	// Logica
 	const [cart, setCart] = useState([])
 
+	const quantity = () => cart.reduce((sum, i) => { return sum + i.quantity }, 0)
+  	const total = () => cart.reduce((sum, i) => { return sum + (i.quantity * i.price) }, 0)
+
 	// Validar si está el item en el carrito
 	const isInCart = (id) => cart.find((producto) => producto.id === id)
 
-	// Agregar item al carrito
-	const addToCart = (producto, cantidad) => {
-		const newCart = [...cart]
-		
-		const productoIsInCart = isInCart(producto.id)
+  //Agregar item al carro
+  const addToCart = ( producto, cantidad ) => {
+    const newCart = [...cart]
+    const productoIsInCart = isInCart(producto.id)
+    if (productoIsInCart) {
+      newCart[newCart.findIndex((prod) => prod.id == productoIsInCart.id)].quantity += cantidad
+      setCart(newCart)
+      return
+    }
+    producto.quantity = cantidad
+    setCart([...newCart, producto])
+  }
 
-		if (productoIsInCart) {
-			newCart[
-				newCart.findIndex((prod) => prod.id === productoIsInCart.id)
-			].quantity += cantidad
-
-			setCart(newCart)
-			return
-		}
-
-		producto.quantity = cantidad
-		setCart([...newCart, producto])
-	}
 	function contarItems() { 
         let iTotales = 0;
         cart.forEach ( element => iTotales += element.cantidad );
@@ -67,6 +65,8 @@ const CartContextProvider = ({ children }) => {
 				deleteCart,
 				setCart,
 				contarItems,
+				quantity,
+				total,
 			}}
 		>
 			{children}
