@@ -6,8 +6,8 @@ import { useCartContext } from "../Context/CartContext";
 
 
 const Cart = () => {
-    const {cart, total, deleteFromCart} = useCartContext()
-    // console.log(cart)
+    const {cart, total} = useCartContext()
+    
    
     if (cart.length === 0) {
         return (
