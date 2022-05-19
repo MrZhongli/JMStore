@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getFirestore, getDoc, doc } from "firebase/firestore";
+import { getFirestore, getDoc, doc, getDocs, collection } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 
@@ -14,38 +14,52 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 
+const app = initializeApp(firebaseConfig);
+ const getProductsData = async() => {
+  const db = getFirestore() 
+  const productsCollection= collection(db,'items')
+  const querySnapshot = await getDocs( productsCollection)
+  let dbProductos = []
+  querySnapshot.forEach( item =>{
+    dbProductos.push(item.data())
+    // console.log(dbProductos);
+  })
+
+  return dbProductos
 
 
 
-const GetProducts = () => {
 
-    const [item, setItem] = useState()
-    useEffect(() => {
-        const db = getFirestore() 
 
-        const planners = doc(db,'items','2')
-        getDoc( planners ).then( res => { 
-            if(res.exists()){
-                console.log(res)
-                console.log(res.id)
-                setItem(res.data())
-            }
-         })
+
+
+
+
+// const db = fire
+
+
+
+
+
+
+    // const [item, setItem] = useState()
+    // useEffect(() => {
+    //     const db = getFirestore() 
+
+    //     const planners = doc(db,'items','2')
+    //     getDoc( planners ).then( res => { 
+    //         if(res.exists()){
+    //             console.log(res)
+    //             console.log(res.id)
+    //             setItem(res.data())
+    //         }
+    //      })
     
-    }, [])
+    // }, [])
+
     
 
-  return (
-    <div>
-        <h1>prueba</h1>
-        <p>{item.name} </p>
-        <p>{item.description} </p>
-        <p>{item.price} </p>
-    </div>
-  )
-}
-
-export default GetProducts
+ }
+export default getProductsData

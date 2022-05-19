@@ -1,25 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { getItemData, productData } from '../../Data/productData'
-
-import { ToastContainer, toast } from 'react-toastify';
+import { getItemData } from '../../Data/productData'
+import  getProductsData  from "../firebase/firebaseClient";
 import ItemDetail from './ItemDetail';
-
-
 
 const ProductDetail = () => {
 
   
     const { productId } = useParams()
-    const [Product, setProduct] = useState( {} )
+    const [Product, setProduct] = useState( [] )
    
    
     
     useEffect(() => {
       if (productId === undefined) {
-        getItemData().then((resp) => setProduct(resp))
+        getProductsData().then((resp) => setProduct(resp))
       } else {
-        getItemData().then((resp) => setProduct(resp[productId]))
+        getProductsData().then((resp) => setProduct(resp[productId - 1 ]))
       }
     }, [productId])
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import {productData} from '../../Data/productData'
-import  {getProductsData}  from "../firebase/firebaseClient";
+// import {productData} from '../../Data/productData'
+import  getProductsData  from "../firebase/firebaseClient";
 import {useState, useEffect} from 'react'
 import ProductCard from './ProductCard';
 import Spinner from '../SpinnerObject/Spinner';
@@ -18,22 +18,25 @@ const ProductList = () => {
     }, [])
     
     useEffect(() => {
-        getProduct()
+        getProductsData().then((props)=>{
+           setProduct(props)
+        })
     }, [])
     
-    const getProduct = () => {
+    // const getProduct = () => {
         
-        // const getProductPromise = new Promise((res, rej) => {
-        //     setTimeout(() => {
-        //         res(productData)
-        //     }, 2000)
-        // })
-        // getProductPromise.then(data => {
-        //     setProduct(data)
+    //     const getProductPromise = new Promise((res, rej) => {
+    //         setTimeout(() => {
+    //             res(getProductsData)
+    //         }, 2000)
+    //     })
+    //     getProductPromise.then(data => {
+    //         setProduct(data)
             
-        // })
-        console.log('Esto viene de fireBase', getProductsData())
-    }
+    //     })
+        
+    //     console.log('Esto viene de fireBase', getProductsData())
+    // }
 
   return (
       <>
