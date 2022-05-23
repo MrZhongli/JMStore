@@ -41,19 +41,21 @@ const ProductList = () => {
   return (
       <>
 
-      {loading 
-      ? 
-      <Spinner /> 
-      
-      :
-      <div className='flex justify-center align-center'>
-              <div className='flex flex-row flex-wrap'>
-                  {product.map(p =>
-                      <ProductCard key={p.id} product={p} />
-                  )}
-              </div>
-          </div> }
-          
+          {loading
+              ?
+              <Spinner />
+
+              :
+                <div>
+                      <h1>Productos</h1>
+                  <div className='flex flex-row flex-wrap m-auto justify-center'>
+                      {product.map(p =>
+                          <ProductCard key={p.id} product={p} />
+                      )}
+                  </div>
+                </div>       
+          }
+
       </>
     
   )

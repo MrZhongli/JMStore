@@ -10,7 +10,8 @@ import ContactContainer from './components/ContactFolder/ContactContainer';
 import AppContextProvider from './components/Context/AppContext';
 import CartContextProvider from './components/Context/CartContext';
 import Cart from './components/CartFolder/Cart';
-import GetProducts from './components/firebase/firebaseClient';
+import Pago from './components/Form/Pago';
+// import GetProducts from './components/firebase/firebaseClient';
 
   
 function App() {
@@ -29,7 +30,7 @@ function App() {
         <Route path='/producto/:productId' element={<ProductDetail />}></Route>
         <Route path='/contactos' element={<ContactContainer />}></Route>
         <Route path='/carrito' element={<Cart />}></Route> 
-        <Route path='/prueba' element={<GetProducts />}></Route>
+        <Route path='/pago' element={<Pago />}></Route>
       </Routes>
       <Footer/>
     </BrowserRouter>

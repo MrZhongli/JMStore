@@ -39,11 +39,11 @@ const Cart = () => {
                     <h3 className="flex justify-center text-blue-700 text-s font-medium">
                         {/* Productos en el carrito: {contarItems */}
                     </h3>
-                    <h3 className="flex justify-center text-blue-700 text-s font-medium">
+                    <h3 >
                         {/* Precio total del carrito: AR$ {precioTotal()} */}
                     </h3>
                 </div>
-                    <h1>Total: ${total()}</h1>
+                    <h1 className="flex justify-center text-blue-700 text-s font-medium">Total: ${total()}</h1>
 
                 {/* Botones */}
                 <div className=" flex flex-wrap justify-center mt-6 mb-20">

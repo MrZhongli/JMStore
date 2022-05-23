@@ -3,30 +3,22 @@ import { Link } from 'react-router-dom'
 import { useCartContext } from '../Context/CartContext'
 
 
-const ProductCard = ( props ) => {
+const ProductCard = (props) => {
 
-    const  {name, id, price, img} = props.product
-    const {cart} = useCartContext()
-
-    console.log(cart)
+  const { name, id, price, img } = props.product
+  const { cart } = useCartContext()
 
   return (
-    <div class="card w-80 bg-base-100 shadow-xl m-10">
-                    <figure><img className="h-60 w-80 m-10" src={img} alt="Shoes" /></figure>
-                    <div class="card-body">
-                    <h2 class="card-title"> 
-                        PLANNERS {name}
-                        {/* <div class="badge badge-secondary">NEW</div> */}
-                    </h2>
-                    
-                    <div class="card-actions justify-end">
-                        <div class="badge badge-outline">CL${price}</div> 
-                        <div class="badge badge-outline">id: {id}</div> 
-                        
-                    </div>
-                    <Link to={`/producto/${id}`} className='btn btn-primary'> Ver</Link>
-                    </div>
-                </div>
+    <div className="card w-80 bg-base-50 shadow-xl m-10">
+      <figure><img className=" mb-10" src={img} alt="Shoes" /></figure>
+      <div className="card-body">
+        <h2 className="card-title"> PLANNERS {name}<div className="badge badge-secondary">NEW</div></h2>
+        <div className="card-actions justify-end">
+          <div className="">CL$ <strong>{price}</strong> </div>
+        </div>
+        <Link to={`/producto/${id}`} className='btn btn-primary'> Ver</Link>
+      </div>
+    </div>
   )
 }
 

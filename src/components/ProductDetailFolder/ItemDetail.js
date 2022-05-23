@@ -29,7 +29,7 @@ const ItemDetail = ( {item} ) => {
     <div class="hero-content flex-col lg:flex-row">
       <img src={item.img} class="max-w-sm rounded-lg " />
       <div>
-        <h1 class="text-5xl font-bold">Planners {item.name}</h1>
+        <h1 class="text-5xl font-bold">{item.name}</h1>
         
         <div>
           <h2 className='m-20'>Descripción</h2>
