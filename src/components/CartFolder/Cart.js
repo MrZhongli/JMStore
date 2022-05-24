@@ -36,27 +36,19 @@ const Cart = () => {
 
                 {/* Totalizados */}
                 <div className="flex flex-col flex-auto ">
-                    <h3 className="flex justify-center text-blue-700 text-s font-medium">
-                        {/* Productos en el carrito: {contarItems */}
-                    </h3>
-                    <h3 >
-                        {/* Precio total del carrito: AR$ {precioTotal()} */}
-                    </h3>
+                    <h1 className="flex justify-center text-red-600 text-s font-medium">Total: ${total()}</h1>
                 </div>
-                    <h1 className="flex justify-center text-blue-700 text-s font-medium">Total: ${total()}</h1>
 
                 {/* Botones */}
                 <div className=" flex flex-wrap justify-center mt-6 mb-20">
                     <Link to="../pago">
-                        <button className="inline-flex items-center border-0 py-1 px-3 mx-5 mt-10 focus:outline-none bg-blue-300 hover:bg-blue-800 hover:text-white rounded-full   md:mt-0 text-lg font-bold animate-bounce">
+                        <button className="inline-flex items-center border-0 py-1 px-3 mx-5 mt-10 focus:outline-none bg-pink-300 hover:bg-pink-800 hover:text-white rounded-full   md:mt-0 text-lg font-bold animate-bounce">
                             Ir a pagar
                         </button>
                     </Link>
-                    {/* <button onClick={deleteCart} className="inline-flex items-center border-0 py-1 px-3 mx-5 mt-10 focus:outline-none bg-blue-300 hover:bg-blue-800 hover:text-white rounded-full   md:mt-0 text-lg font-bold">
-                        Vaciar carrito
-                    </button> */}
+                    
                     <Link to="../producto">
-                        <button className="inline-flex items-center border-0 py-1 px-3 mx-5 mt-10 focus:outline-none bg-blue-300 hover:bg-blue-800 hover:text-white rounded-full   md:mt-0 text-lg font-bold">
+                        <button className="inline-flex items-center border-0 py-1 px-3 mx-5 mt-10 focus:outline-none bg-pink-300 hover:bg-pink-800 hover:text-white rounded-full   md:mt-0 text-lg font-bold">
                             Seguir comprando
                         </button>
                     </Link>

@@ -23,7 +23,7 @@ const CartItem = ({item}) => {
                         <span className="flex text-gray-500 text-s font-medium ">Precio: CL$ {item.quantity * item.price}</span>
                     </div>
                     <div className="flex items-center  flex-end">
-                        <button onClick={()=>eliminarItem(item.id)} className="inline-flex items-center border-0 py-1 px-3 mx-5 mt-10 focus:outline-none bg-blue-300 hover:bg-blue-800 hover:text-white rounded-full   md:mt-0 text-lg font-bold" >Eliminar</button>
+                        <button onClick={()=>eliminarItem(item.id)} className="inline-flex items-center border-0 py-1 px-3 mx-5 mt-10 focus:outline-none bg-pink-300 hover:bg-pink-800 hover:text-white rounded-full   md:mt-0 text-lg font-bold" >Eliminar</button>
                     </div> 
                 </div>
             </div>

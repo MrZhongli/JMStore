@@ -19,7 +19,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore()
 const productsCollection = collection(db, 'items')
-const comprasColeccion = collection(db, 'compras')
+// const comprasColeccion = collection(db, 'compras')
 
 // obtener datos
 const getProductsData = async () => {
