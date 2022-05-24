@@ -19,7 +19,7 @@ export const NavBar = () => {
         <li className="mx-8 "><a className="text-black "><Link to={'/contactos'}> Contactos  </Link></a></li>
       </ul>
       <CartWidget/>
-      <div className="dropdown dropdown-end">
+      {/* <div className="dropdown dropdown-end">
         <label tabindex="0" className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
             <img src="https://api.lorem.space/image/face?hash=33791" />
@@ -35,7 +35,7 @@ export const NavBar = () => {
           <li><a>Settings</a></li>
           <li><a>Logout</a></li>
         </ul>
-      </div>
+      </div> */}
     </div>
   </div>
   )

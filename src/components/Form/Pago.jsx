@@ -1,13 +1,14 @@
+import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../Context/CartContext';
-import  grabarCompra  from "../firebase/firebaseClient";
+// import  grabarCompra  from "../firebase/firebaseClient";
 
 const Pago = () => {
 
     const { cart , total, deleteCart} = useCartContext()
 
-    const armarCompra = (datosClientes)=>{
+    const armarCompra = async(datosClientes)=>{
         const productosCompra = cart.map((element)=>{
             return{
                 id: element.id,
@@ -23,9 +24,16 @@ const Pago = () => {
         productos:[...productosCompra],
         total: total()
     };
+
+    const db = getFirestore()
+    const comprasColeccion = collection(db, 'compras')
+    const response = await addDoc(comprasColeccion, compra)
+    console.log(response);
+
     console.log(compra);
-    grabarCompra();
+    // grabarCompra();
     deleteCart()
+
 
 }
 
@@ -51,7 +59,9 @@ function handleInput(event) {
   return (
       
     <>
-    <div>
+    {
+        cart.length > 0 ? (
+            <div>
         <div className="py-12 flex justify-center">
             <div className="max-w-md     md:max-w-xl mx-2">
                 <form className="md:flex  ">
@@ -187,6 +197,12 @@ function handleInput(event) {
             </div>
         </div>
     </div>
+        )
+        :
+            <h1 className='text-3xl m-10'>No hay productos en tu carrito</h1>
+        
+    }
+    
 </>
   )
 }

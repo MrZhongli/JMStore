@@ -17,7 +17,7 @@ export const Footer = () => {
             </div>
         </div> 
         <div>
-            <p>Copyright © 2022 - All right reserved by KDC development Ltd</p>
+            <p>Copyright © 2022 - Todos los derechos reservados hecho por Kenneth DC development</p>
         </div>
     </footer>
   )

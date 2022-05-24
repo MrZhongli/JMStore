@@ -48,9 +48,9 @@ const ProductList = () => {
               :
                 <div>
                       <h1>Productos</h1>
-                  <div className='flex flex-row flex-wrap m-auto justify-center'>
+                  <div className='flex flex-row flex-wrap m-auto justify-center '>
                       {product.map(p =>
-                          <ProductCard key={p.id} product={p} />
+                          <ProductCard  key={p.id} product={p} />
                       )}
                   </div>
                 </div>       

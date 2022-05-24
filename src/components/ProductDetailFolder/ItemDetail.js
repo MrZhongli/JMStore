@@ -18,11 +18,7 @@ const ItemDetail = ( {item} ) => {
   setCount(quantiyToAdd)
   
   }
-
-
-	
-
-
+  
   return (
 
     <div class="hero min-h-screen bg-pink-100 ">
