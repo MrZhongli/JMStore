@@ -34,12 +34,12 @@ const getProductsData = async () => {
 }
 
 // guardar compra
-export const grabarCompra = async (orders) => {
-  // const db = getFirestore();
-  const respuesta = await addDoc(comprasColeccion, orders)
-   console.log("grabarCompra"); 
-  return respuesta
-}
+// export const grabarCompra = async (orders) => {
+//   // const db = getFirestore();
+//   const respuesta = await addDoc(comprasColeccion, orders)
+//    console.log("grabarCompra"); 
+//   return respuesta
+// }
 
 
 export default getProductsData

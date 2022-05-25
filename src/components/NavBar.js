@@ -7,7 +7,7 @@ export const NavBar = () => {
   // const estilos={position:'fixed', zIndex: 1000}
    
   return (
-    <div  className="navbar bg-pink-200 bg-transparent " >
+    <div  className="navbar bg-pink-200 bg-transparent z-100 " >
     <div className="flex-1">
       <a className="btn btn-ghost normal-case text-xl">Rosse Papeleria</a>
     </div>
