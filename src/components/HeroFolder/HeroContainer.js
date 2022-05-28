@@ -3,7 +3,11 @@ import React from 'react'
 
 const HeroContainer = () => {
   return (
+<<<<<<< HEAD
     <div className="hero  ">
+=======
+    <div className="hero min-h-screen bg-transparent">
+>>>>>>> 3ffa97d46877daf954eea9694654c3489e62bc82
       <img className='relative mb-5' src='https://firebasestorage.googleapis.com/v0/b/rosse-papeleria.appspot.com/o/webPresentation.svg?alt=media&token=da006ee5-e2fb-4ece-8a88-a6ab56d3d87f' />
       <div className="hero-content flex-col-reverse mt-10 lg:flex-row-reverse">
         <img  src="https://www.orem.com.mx/wp-content/uploads/2021/09/imagenes-cuadradas-sin-fondo-para-web.png" className="max-w-sm rounded-lg shadow-2xl md:hidden sm:hidden lg:block " />

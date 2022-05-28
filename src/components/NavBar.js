@@ -4,6 +4,7 @@ import CartWidget from "./CartFolder/CartWidget";
 
 export const NavBar = () => {
   return (
+<<<<<<< HEAD
 
     <div className="navbar ">
       <div className="navbar-start  ">
@@ -33,6 +34,11 @@ export const NavBar = () => {
       <div className="navbar-end">
         <Link to="/carrito"><CartWidget /></Link>
       </div>
+=======
+    <div  className="navbar bg-pink-200 bg-transparent z-100 " >
+    <div className="flex-1">
+      <a className="btn btn-ghost normal-case text-xl">Rosse Papeleria</a>
+>>>>>>> 3ffa97d46877daf954eea9694654c3489e62bc82
     </div>
   )
 }
