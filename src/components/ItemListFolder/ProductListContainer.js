@@ -23,28 +23,12 @@ const ProductList = () => {
         })
     }, [])
     
-    // const getProduct = () => {
-        
-    //     const getProductPromise = new Promise((res, rej) => {
-    //         setTimeout(() => {
-    //             res(getProductsData)
-    //         }, 2000)
-    //     })
-    //     getProductPromise.then(data => {
-    //         setProduct(data)
-            
-    //     })
-        
-    //     console.log('Esto viene de fireBase', getProductsData())
-    // }
 
   return (
       <>
-
           {loading
               ?
               <Spinner />
-
               :
                 <div>
                       <h1>Productos</h1>
@@ -55,7 +39,6 @@ const ProductList = () => {
                   </div>
                 </div>       
           }
-
       </>
     
   )

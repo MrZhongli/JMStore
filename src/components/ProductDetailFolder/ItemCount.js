@@ -39,7 +39,7 @@ const ItemCount = ({ item, onAdd }) => {
           </div>
         </div>
         <div>
-          <button class="btn btn-success  border-slate-400 border-2 rounded-sm" onClick={handleClick}>
+          <button className="btn btn-success  border-slate-400 border-2 rounded-sm" onClick={handleClick}>
             Agregar al carrito
           </button>
         </div>

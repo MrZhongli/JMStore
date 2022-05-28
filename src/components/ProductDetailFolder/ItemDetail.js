@@ -21,27 +21,24 @@ const ItemDetail = ( {item} ) => {
   
   return (
 
-    <div class="hero min-h-screen bg-pink-100 ">
-    <div class="hero-content flex-col lg:flex-row">
-      <img src={item.img} class="max-w-sm rounded-lg " />
+    <div className="hero  bg-pink-100 ">
+    <div className="hero-content flex-col lg:flex-row">
+      <img src={item.img} className="max-w-sm rounded-lg " />
       <div>
-        <h1 class="text-5xl font-bold">{item.name}</h1>
-        
+        <h1 className="text-5xl font-bold text-black">{item.name}</h1>
         <div>
-          <h2 className='m-20'>Descripción</h2>
+          <h2 className='m-20 text-black'>Descripción</h2>
         </div>
         <div className='m-20'>
-        <p class="py-6">{item.description}</p>
+        <p className="py-6 text-black">{item.description}</p>
         </div>
-        <span>cantidad disponible:{item.stock} </span>
-          <h2 className='m-20'>Precio {item.price} </h2>
-        
-          
-        {/* <button class="btn btn-primary">Solicitar producto</button> */}
+        <span className='text-black'>cantidad disponible:{item.stock} </span>
+          <h2 className='m-20 text-black  '>Precio {item.price} </h2>
+
         
         {count !== 0 ? 
         (
-        <Link to='/carrito'> <button class="btn btn-success  border-slate-400 border-2 rounded-sm">
+        <Link to='/carrito'> <button className="btn btn-success  border-slate-400 border-2 rounded-sm">
         Terminar Compra
         </button>
         </Link>
@@ -50,7 +47,6 @@ const ItemDetail = ( {item} ) => {
           <ItemCount  item={item}  onAdd={onAdd} />
         )
         }
-       
       </div>
     </div>
   </div>

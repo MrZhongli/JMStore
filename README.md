@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Proyecto ROSSE PAPELERIA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Para acceso al proyecto directamente en el Link :"aqui va el link"
 
-## Available Scripts
+## Datos
 
-In the project directory, you can run:
+Curso: React from CoderHouse
 
-### `npm start`
+Camada: 31160
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Profesor: Adrian Escalante
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Tutor: Jesus Pelozo
 
-### `npm test`
+Elaborado por: Kenneth Chan
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Info
 
-### `npm run build`
+ROSSE PAPELERIA: Es un proyecto real con el fin de promover los productos deel emprendimiento de la autora de la misma (Rosselen Herrera), conteniendo variedad de agendas personalizadas al gusto del cliente, diseñado con una interfaz sencilla y atractiva para el usuario.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tecnologias Aplicadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+HTML
+CSS3
+JAVASCRIPT
 
-### `npm run eject`
+### LIBRERIAS
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+REACT
+TAILWIND
+TOASTIFY
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### BASE DE DATOS
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+FIREBASE
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### GESTOR DE PAQUETE
 
-## Learn More
+NPM
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### CONTROL DE VERSIONES
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+GIT
 
-### Code Splitting
+## Contacto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Linkedin: [perfil](linkedin.com/in/kenneth-david-chan-81a6a8210)
 
-### Analyzing the Bundle Size
+## Otros
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Una vez descargado el proyecto  se debe ingresar en la terminal:
 
-### Making a Progressive Web App
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+De esta forma se inicia en forma local y se puede acceder en http://localhost:3000/Rosse-papeleria para verlo en el navegador.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+para mas info respecto a la doc acceder a [Create React App Documentation](https://create-react-app.dev/docs/getting-started/).
