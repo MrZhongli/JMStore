@@ -52,6 +52,8 @@ const CartContextProvider = ({ children }) => {
 
 	const deleteCart = () => setCart([])
 
+	console.log(cart)
+
 	return (
 		<CartContext.Provider
 			value={{
