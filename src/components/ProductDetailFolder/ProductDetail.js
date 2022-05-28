@@ -1,26 +1,67 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import { productData } from '../../Data/productData'
+import ItemCount from './ItemCount'
+import { ToastContainer, toast } from 'react-toastify';
 
-import getProductsData from "../firebase/firebaseClient";
-import ItemDetail from './ItemDetail';
+
 
 const ProductDetail = () => {
 
-  const { productId } = useParams()
-  const [Product, setProduct] = useState([])
+    const { productId } = useParams()
+    const [Product, setProduct] = useState( {} )
+    const [Terminar, setTerminar] = useState(false)
+   
+    
+    useEffect(() => {
+      setProduct (productData.find(p => p.id == productId))
+    }, [productId])
 
-  useEffect(() => {
-    if (productId === undefined) {
-      getProductsData().then((resp) => setProduct(resp))
-    } else {
-      getProductsData().then((resp) => setProduct(resp[productId - 1]))
+    const onAdd = () =>{
+      setTerminar(true)
+      // Colocar alert de toastify (a futuro)
     }
-  }, [productId])
+
+    const notify = () => toast("Wow so easy !");
+    
 
   return (
+   <>
+
+<div class="hero min-h-screen bg-pink-100 ">
+  <div class="hero-content flex-col lg:flex-row">
+    <img src={Product.img} class="max-w-sm rounded-lg " />
     <div>
-      <ItemDetail className="container mx-auto my-8 max-w-4xl " item={Product} />
+      <h1 class="text-5xl font-bold">{Product.name}</h1>
+      <div>
+        <h2 className='m-20'>Descripción</h2>
+      </div>
+      <div className='m-20'>
+      <p class="py-6 m-28">{Product.description}</p>
+      </div>
+      <ToastContainer />
+      
+        
+      {/* <button class="btn btn-primary">Solicitar producto</button> */}
+      
+      {Terminar ? 
+      (
+      <Link to='/cart'> <button class="btn btn-success  border-slate-400 border-2 rounded-sm">
+      Terminar Compra
+      </button>
+      </Link>
+      )
+      :(
+        <ItemCount onAdd={onAdd} />
+      )
+      }
+     
     </div>
+  </div>
+</div>
+
+
+   </>
   )
 }
 

@@ -1,56 +1,22 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { useCartContext } from '../Context/CartContext'
-import  ItemCount  from './ItemCount'
+import  DetailContainer from './DetailContainer'
 
 
+const ItemDetail = ( {Item} ) => {
 
-const ItemDetail = ( {item} ) => {
-
-  // const [Terminar, setTerminar] = useState(false)
-  const [count, setCount] = useState(0);
-  const { addToCart} = useCartContext()
-  
-  
-  
-  const onAdd = (quantiyToAdd) =>{ 
-  // setTerminar(true)
-  setCount(quantiyToAdd)
-  
-  }
-  
   return (
 
-    <div className="hero  bg-pink-100 ">
-    <div className="hero-content flex-col lg:flex-row">
-      <img src={item.img} className="max-w-sm rounded-lg " />
-      <div>
-        <h1 className="text-5xl font-bold text-black">{item.name}</h1>
-        <div>
-          <h2 className='m-20 text-black'>Descripción</h2>
+        <div class="card w-96 bg-base-100 shadow-xl m-8">
+            <figure><img src={Item.img} className="h-60 w-80 m-10" alt="planners"/></figure>
+            <div class="card-body">
+                <h2 class="card-title text-center"><strong>{Item.name}</strong></h2>
+                <p>id :{Item.id} </p>
+                <p>precio: {Item.price}</p>
+            </div>
+            <button className='btn btn-primary'>Ver</button>
+       
         </div>
-        <div className='m-20'>
-        <p className="py-6 text-black">{item.description}</p>
-        </div>
-        <span className='text-black'>cantidad disponible:{item.stock} </span>
-          <h2 className='m-20 text-black  '>Precio {item.price} </h2>
-
-        
-        {count !== 0 ? 
-        (
-        <Link to='/carrito'> <button className="btn btn-success  border-slate-400 border-2 rounded-sm">
-        Terminar Compra
-        </button>
-        </Link>
-        )
-        :(
-          <ItemCount  item={item}  onAdd={onAdd} />
-        )
-        }
-      </div>
-    </div>
-  </div>
-  
   )
 }
 
