@@ -2,7 +2,10 @@ import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../Context/CartContext';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
+const MySwal = withReactContent(Swal)
 const Pago = () => {
 
     const { cart , total, deleteCart} = useCartContext()
@@ -29,6 +32,15 @@ const Pago = () => {
     console.log(response);
     console.log(compra);
     deleteCart()
+
+    const MySwal = withReactContent(Swal)
+
+    await MySwal.fire({
+    title: <strong>Gracias por tu compra</strong>,
+    html: <i>Para para seguir comprando vaya al inicio</i>,
+    icon: 'success'
+    })
+
 }
 const [cliente, setCliente] = useState({
     nombre:       "",
@@ -46,7 +58,6 @@ function handleInput(event) {
     const nameInput = target.name;
     setCliente({ ...cliente , [nameInput]: value });
 }
-
 
   return (
       
@@ -172,7 +183,7 @@ function handleInput(event) {
                                                   </button>
                                               </Link>
                                               {total() > 0 &&
-                                                  <Link to="../finalizado">
+                                                  
                                                       <button
                                                           type="button"
                                                           value="Submit"
@@ -180,7 +191,6 @@ function handleInput(event) {
                                                           onClick={() => { armarCompra(cliente) }} >
                                                           Finalizar compra
                                                       </button>
-                                                  </Link>
                                               }
                                           </div>
                                       </div>
@@ -191,7 +201,10 @@ function handleInput(event) {
                   </div>
               )
                   :
-                  <h1 className='text-3xl m-10'>No hay productos en tu carrito</h1>
+                  <div>
+                      <h1 className='text-3xl m-10'>No hay productos en tu carrito </h1>
+                      <Link to="/" className='btn btn-primary m-10'>ir a inicio</Link>
+                  </div>
           }
 
       </>

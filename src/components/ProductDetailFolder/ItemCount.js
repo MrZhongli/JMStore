@@ -30,19 +30,20 @@ const ItemCount = ({ item, onAdd }) => {
 
   return (
     <>
-      <div className='flex justify-around ...   '>
-        <div className='flex justify-between w-100 ... border-4 '>
-          <div>Cantidad
-            <button onClick={resHandler} className='btn btn-outline btn-info mx-7'>-</button>
-            <strong >{count}</strong>
-            <button onClick={addHandler} className=' btn btn-outline btn-info mx-7'>+</button>
+      <div className='flex flex-wrap justify-content align-items-center'>
+        <div className='flex justify-between w-100 justify-content align-items-center sm:mx-auto'>
+          <div >
+            <p className='text-black'>Cantidad</p>
+            <button onClick={resHandler} className='btn btn-outline btn-info mx-7 sm:mx-6'>-</button>
+            <strong className='text-black'>{count}</strong>
+            <button onClick={addHandler} className=' btn btn-outline btn-info mx-7 sm:mx-6'>+</button>
           </div>
         </div>
         <div>
-          <button class="btn btn-success  border-slate-400 border-2 rounded-sm" onClick={handleClick}>
+        </div>
+          <button className="btn btn-success  border-slate-400 border-2 rounded-sm lg:mx-24 sm:mx-auto sm:my-5" onClick={handleClick}>
             Agregar al carrito
           </button>
-        </div>
       </div>
     </>
 

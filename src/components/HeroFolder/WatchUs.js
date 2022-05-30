@@ -2,19 +2,16 @@ import React from 'react'
 
 const WatchUs = () => {
   return (
-    <div class="hero min-h-screen bg-base-200">
-    <div class="hero-content text-center flex-col lg:flex-row">
-  
-    
-      <div class="max-w-md">
-        <h1 class="text-5xl font-bold">Hecha un vistazo a nuestro catalogo</h1>
-        <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-        
+    <div className="hero min-h-screen ">
+      
+      <div className="hero-content text-center flex-col lg:flex-row">
+        <div className="max-w-md">
+          <h1 className="text-5xl font-bold text-black">Siguenos en nuestro <a href='https://www.instagram.com/rossepapeleria/'><strong><i>instagram</i> </strong></a></h1>
+          <p className="py-6 text-black">Para mas info y agendas que te pueden gustar</p>
+        </div>
       </div>
+      <img src="https://eltallerdehector.com/wp-content/uploads/2021/06/Instagram-Logo-png.png" className="max-w-sm rounded-lg shadow-2xl" />
     </div>
-    <img src="https://api.lorem.space/image/movie?w=260&h=400" class="max-w-sm rounded-lg shadow-2xl" />
-    
-  </div>
   )
 }
 
