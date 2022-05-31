@@ -1,6 +1,6 @@
 # Proyecto ROSSE PAPELERIA
 
-Para acceso al proyecto directamente en el Link :"aqui va el link"
+Para acceso al proyecto directamente en el Link :"https://rosse-papeleria.vercel.app/"
 
 ## Datos
 
@@ -53,6 +53,6 @@ Una vez descargado el proyecto  se debe ingresar en la terminal:
 
 npm start
 
-De esta forma se inicia en forma local y se puede acceder en http://localhost:3000/Rosse-papeleria para verlo en el navegador.
+De esta forma se inicia en forma local y se puede acceder en http://localhost:3000/ para verlo en el navegador una vez iniciado npm start.
 
 para mas info respecto a la doc acceder a [Create React App Documentation](https://create-react-app.dev/docs/getting-started/).
