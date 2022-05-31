@@ -11,7 +11,6 @@ import AppContextProvider from './components/Context/AppContext';
 import CartContextProvider from './components/Context/CartContext';
 import Cart from './components/CartFolder/Cart';
 import Pago from './components/Form/Pago';
-// import GetProducts from './components/firebase/firebaseClient';
 
   
 function App() {

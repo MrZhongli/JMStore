@@ -22,21 +22,7 @@ const ProductList = () => {
            setProduct(props)
         })
     }, [])
-    
-    // const getProduct = () => {
-        
-    //     const getProductPromise = new Promise((res, rej) => {
-    //         setTimeout(() => {
-    //             res(getProductsData)
-    //         }, 2000)
-    //     })
-    //     getProductPromise.then(data => {
-    //         setProduct(data)
-            
-    //     })
-        
-    //     console.log('Esto viene de fireBase', getProductsData())
-    // }
+
 
   return (
       <>

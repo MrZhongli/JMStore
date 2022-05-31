@@ -5,11 +5,11 @@ import { useCartContext } from '../Context/CartContext';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
-const MySwal = withReactContent(Swal)
 const Pago = () => {
-
+    
+    // const MySwal = withReactContent(Swal)
     const { cart , total, deleteCart} = useCartContext()
-
+    
     const armarCompra = async(datosClientes)=>{
         const productosCompra = cart.map((element)=>{
             return{
@@ -29,8 +29,7 @@ const Pago = () => {
     const db = getFirestore()
     const comprasColeccion = collection(db, 'compras')
     const response = await addDoc(comprasColeccion, compra)
-    console.log(response);
-    console.log(compra);
+
     deleteCart()
 
     const MySwal = withReactContent(Swal)
