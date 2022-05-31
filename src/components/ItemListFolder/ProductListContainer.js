@@ -44,15 +44,16 @@ const ProductList = () => {
           {loading
               ?
               <Spinner />
-
               :
                 <div>
-                      <h1>Productos</h1>
-                  <div className='flex flex-row flex-wrap m-auto justify-center '>
-                      {product.map(p =>
-                          <ProductCard  key={p.id} product={p} />
-                      )}
-                  </div>
+                    <div className='grid '>
+                        <h1 className='text-black'>Productos</h1>
+                    <div className='grid  xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1'>
+                        {product.map(p =>
+                            <ProductCard  key={p.id} product={p} />
+                        )}
+                    </div>
+                    </div>
                 </div>       
           }
 

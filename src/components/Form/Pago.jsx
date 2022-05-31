@@ -171,14 +171,14 @@ function handleInput(event) {
                                               <Link to="../carrito">
                                                   <button
                                                       type="button"
-                                                      className="py-1  text-3lg inline-flex items-center border-0  px-3 mt-10 bg-pink-300 hover:bg-pink-800 hover:text-white  text-1lg font-bold">
+                                                      className="inline-flex items-center border-0 py-1 px-3 mx-3 mt-10 focus:outline-none bg-pink-300 hover:bg-pink-800 hover:text-white rounded-full   md:mt-0 text-lg font-bold">
                                                       Volver
                                                   </button>
                                               </Link>
                                               <Link to="../catalogo/todo">
                                                   <button
                                                       type="button"
-                                                      className="py-1  text-3lg inline-flex items-center border-0  px-3 mt-10 bg-pink-300 hover:bg-pink-800 hover:text-white md:mt-0  text-1lg font-bold" >
+                                                      className="inline-flex items-center border-0 py-1 px-3 mx-3 mt-10 focus:outline-none bg-pink-300 hover:bg-pink-800 hover:text-white rounded-full   md:mt-0 text-lg font-bold" >
                                                       Seguir comprando
                                                   </button>
                                               </Link>
@@ -187,7 +187,7 @@ function handleInput(event) {
                                                       <button
                                                           type="button"
                                                           value="Submit"
-                                                          className="py-1 text-3lg inline-flex items-center border-0  px-3 mt-10 bg-pink-300 hover:bg-pink-800 hover:text-white md:mt-0  text-1lg font-bold"
+                                                          className="inline-flex items-center border-0 py-1 px-3 mx-3 mt-10 focus:outline-none bg-pink-300 hover:bg-pink-800 hover:text-white rounded-full   md:mt-0 text-lg font-bold"
                                                           onClick={() => { armarCompra(cliente) }} >
                                                           Finalizar compra
                                                       </button>

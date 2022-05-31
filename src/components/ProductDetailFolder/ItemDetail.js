@@ -23,18 +23,18 @@ const ItemDetail = ( {item} ) => {
 
     <div className="hero min-h-screen bg-pink-100 ">
     <div className="hero-content flex-col lg:flex-row">
-      <img src={item.img} class="max-w-sm rounded-lg " />
+      <img src={item.img} class="lg:max-w-sm md:max-w-sm sm:w-screen rounded-lg " />
       <div>
-        <h1 className="text-5xl font-bold">{item.name}</h1>
+        <h1 className="text-5xl font-bold text-black">PLANNERS {item.name}</h1>
         
         <div>
-          <h2 className='m-20'>Descripción</h2>
+          <h2 className='my-14 text-black'>Incluye</h2>
         </div>
-        <div className='m-20'>
-        <p className="py-6">{item.description}</p>
+        <div className=''>
+        <p className="py-6 text-black">{item.description}</p>
         </div>
-        <span>cantidad disponible:{item.stock} </span>
-          <h2 className='m-20'>Precio {item.price} </h2>
+        <span className="py-6 text-black">cantidad disponible: {item.stock} </span>
+          <h2 className='m-20 text-black'>Precio {item.price} </h2>
         
           
         {/* <button class="btn btn-primary">Solicitar producto</button> */}
